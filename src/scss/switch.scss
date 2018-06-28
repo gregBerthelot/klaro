@@ -11,13 +11,13 @@
 
         input:checked + .slider {
             opacity: 0.5;
-            background-color: $blue3;
+            background-color: $primary;
           }
         
     }
 
     input:checked + .slider {
-        background-color: $blue1;
+        background-color: $primary;
         }
 
         /* The slider */
@@ -46,7 +46,7 @@
         }
         
         input:focus + .slider {
-        box-shadow: 0 0 1px $blue1;
+        box-shadow: 0 0 1px $primary;
         }
         
         input:checked + .slider:before {
