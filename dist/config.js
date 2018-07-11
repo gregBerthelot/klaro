@@ -9,11 +9,11 @@ var klaroConfig = {
 
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.
-    elementID: 'klaro',
-
+    elementID: 'cookie-consent',
+    
     // You can customize the name of the cookie that Klaro uses for storing
     // user consent decisions. If undefined, Klaro will use 'klaro'.
-    cookieName: 'klaro',
+    cookieName: 'cookie-consent',
 
     // You can also set a custom expiration time for the Klaro cookie.
     // By default, it will expire after 120 days.

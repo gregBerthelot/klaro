@@ -44,7 +44,7 @@ export default class ConsentNotice extends React.Component {
         var changesText
 
         if (manager.changed)
-            changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>
+            changesText = <p className="cookie-notice-changes">{t(['consentNotice', 'changeDescription'])}</p>
 
         if (manager.confirmed && !show)
             return <div />
@@ -54,14 +54,14 @@ export default class ConsentNotice extends React.Component {
         
         if (!manager.confirmed && !config.noNotice)
             return <div className="cookie-notice">
-                <span className="cn-body">
+                <span className="cookie-notice-body">
                     {t(['consentNotice', 'description'], {purposes: <b>{purposesText}</b>})}
                     <a className="" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</a>
                 </span>
                 {changesText}
-                <div className="cn-ok">
-                    <a className="cn-btn cn-btn-sm cn-btn-success" href="#" onClick={saveAndHide}>{t(['ok'])}</a>
-                </div>
+                <span className="cookie-notice-ok">
+                    <a className="cookie-notice-btn cookie-notice-btn-primary" href="#" onClick={saveAndHide}>{t(['ok'])}</a>
+                </span>
             </div>
 
         return <div />

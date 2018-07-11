@@ -56,12 +56,12 @@ export default class Apps extends React.Component {
 
             const purposesText = app.purposes.map((purpose) => t(['purposes', purpose])).join(", ")
             
-            const optOutText = optOut ? <span class="cm-opt-out" title={t(['app', 'optOut', 'description'])}>{t(['app', 'optOut', 'title'])}</span> : ''
-            const requiredText = required ? <span class="cm-required" title={t(['app', 'required', 'description'])}>{t(['app', 'required', 'title'])}</span> : ''
-            return <li className="cm-app">
+            const optOutText = optOut ? <span class="cookie-modal-opt-out" title={t(['app', 'optOut', 'description'])}>{t(['app', 'optOut', 'title'])}</span> : ''
+            const requiredText = required ? <span class="cookie-modal-required" title={t(['app', 'required', 'description'])}>{t(['app', 'required', 'title'])}</span> : ''
+            return <li className="cookie-modal-app">
                 <Switch disabled={required} checked={checked || required} onToggle={toggleApp} />
-                <span className="cm-app-title">{app.title}</span>{requiredText}{optOutText}
-                <p className="cm-app-description">{t([app.name, 'description'])}</p>
+                <span className="cookie-modal-app-title">{app.title}</span>{requiredText}{optOutText}
+                <p className="cookie-modal-app-description">{t([app.name, 'description'])}</p>
                 <p className="purposes">{t(['app', app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
             </li>
         })
@@ -72,12 +72,12 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length == 0 ? true : false
 
-        const disableAllItem = <li className="cm-app cm-toggle-all">
+        const disableAllItem = <li className="cookie-modal-app cookie-modal-toggle-all">
             <Switch checked={!allDisabled} onToggle={toggleAll} />
-            <span className="cm-app-title">{t(['app','disableAll','title'])}</span>
-            <p className="cm-app-description">{t(['app', 'disableAll', 'description'])}</p>
+            <span className="cookie-modal-app-title">{t(['app','disableAll','title'])}</span>
+            <p className="cookie-modal-app-description">{t(['app', 'disableAll', 'description'])}</p>
         </li>
-        return <ul className="cm-apps">
+        return <ul className="cookie-modal-apps">
             {appItems}
             {disableAllItem}
         </ul>
