@@ -60,7 +60,7 @@ export default class Apps extends React.Component {
             const requiredText = required ? <span class="cookie-modal-required" title={t(['app', 'required', 'description'])}>{t(['app', 'required', 'title'])}</span> : ''
             return <li className="cookie-modal-app">
                 <Switch disabled={required} checked={checked || required} onToggle={toggleApp} />
-                <span className="cookie-modal-app-title">{app.title}</span>{requiredText}{optOutText}
+                <span className="cookie-modal-app-title">{t([app.name, 'title'])}</span>{requiredText}{optOutText}
                 <p className="cookie-modal-app-description">{t([app.name, 'description'])}</p>
                 <p className="purposes">{t(['app', app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
             </li>

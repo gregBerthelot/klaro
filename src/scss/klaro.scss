@@ -1,9 +1,26 @@
+// BLACK - YELLOW
+/*
+$text-color: rgb(255, 255, 255);
+$btn-color: rgb(0, 0, 0);
 $border: 1px solid #555;
-$background: #111;
+$background: rgb(17, 17, 17);
 $primary: rgb(241, 214, 0);
 $primary-hover: rgb(255, 252, 38);
-$secondary: #f0506e;
-$muted: #999;
+$secondary: rgb(240, 80, 110); 
+$secondary-hover: rgb(238, 57, 91);
+$muted: rgb(153, 153, 153);
+*/
+
+// LIGHT GREY - BLUE
+$text-color: rgb(131, 131, 145);;
+$btn-color: rgb(255, 255, 255);
+$border: 1px solid rgb(131, 131, 145);;
+$background: rgb(245, 245, 245);
+$primary: rgb(30, 135, 240);
+$primary-hover: rgb(15, 122, 229);
+$secondary: rgb(240, 80, 110); 
+$secondary-hover: rgb(238, 57, 91);
+$muted: rgb(153, 153, 153);
 
 .cookie-consent {
 
@@ -12,19 +29,19 @@ $muted: #999;
         @import 'switch.scss';
     
         font-size: 16px;
-        font-family: Helvetica,Calibri,Arial,sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         line-height: 1.5em;
-        
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+
         p, h1, h2, ul, li {
             display: block;
-            font-family: inherit;
-            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: $text-color;
             text-align: left;
             margin: 0;
-
-        }
-    
-        .slider {
+            line-height: inherit;
         }
     
         a {
@@ -34,15 +51,11 @@ $muted: #999;
         }
         
         a:hover {
-          color: #ffffff;
-          text-decoration: none;
-          transition: all .2s ease-in-out;
+            color: $text-color;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
         }
-    
 
-    
-        
-    
     }
     
     .cookie-modal {
@@ -77,102 +90,103 @@ $muted: #999;
     
             width: 100%;
             max-height: 100%;        
-    
             top: 50%;
             transform: translateY(-50%);
-    
             position: fixed;
             overflow: auto;
             background: $background;
-            color: #ffffff;
+            color: $text-color;
     
             a.hide   {
                 svg {
-                    stroke: #ffffff;
+                    stroke: $text-color;
                 }
                 position: absolute;
                 top: 20px;
                 right: 20px;
             }
             
-            
-    
             .cookie-modal-footer {
-                padding: 1em;
+                padding: 2em;
                 border-top: $border;
     
                 a.cookie-modal-powered-by {
                     position: absolute;
-                    right: 1em;
+                    right: 2em;
                     color: $muted;
                     font-size: 0.8em;
                     padding-top: 4px;
                 }
                 
                 a.cookie-modal-btn {
-            color: #000000;
-            padding: 0.5em 1em;
-            margin-right: 0.5em;
-            text-decoration: none;
-    
-            &.cookie-modal-btn-close {
-                background: #eee;
-                color: #000;
-            }
-    
-            &.cookie-modal-btn-primary {
-                background: $primary;
-            }
+                    color: $btn-color;
+                    padding: 0.5em 1em;
+                    margin-right: 0.5em;
+                    text-decoration: none;
             
-            &.cookie-modal-btn-primary:hover {
-                background: $primary-hover;
-                color: #000;
-            }
+                    &.cookie-modal-btn-primary {
+                        background: $primary;
+                    }
+                    
+                    &.cookie-modal-btn-primary:hover {
+                        background: $primary-hover;
+                        color: $btn-color;
+                    }
 
-        }
+                }
             }
     
             .cookie-modal-header {
-                padding: 1em;
-                padding-right: 24px;
+                padding: 2em;
                 border-bottom: $border;
+                
                 h1 {
-                    margin: 0;
-                    font-size: 2em;
+                    margin: 12px 0;
+                    font-size: 1.6em;
                     display: block;
-                    &.title {
-                        padding-right: 20px;
-                    }
                 }
             }
     
             .cookie-modal-body {
-                padding: 1em;
+                padding: 2em;
+                
                 ul {
                     display: block;
                 }
+                
                 span {
                     display: inline-block;
                     width: auto;
                 }
+                
                 ul.cookie-modal-apps {
                     padding :0;
                     margin: 0;
+                    
                     li.cookie-modal-app {
+                        
                         &:first-child{
                             margin-top: 0;
                         }
+                        
                         position: relative;
                         line-height: 20px;
                         vertical-align: middle;
-                        padding-left: 60px;
+                        padding-left: 50px;
                         min-height: 40px;
+                        
                         .switch {
                             position: absolute;
                             left: 0;
                         }
+                        
                         p {
-                            margin-top: 0;
+                            margin: 0;
+                        }
+                        
+                        p.cookie-modal-app-description {
+                            margin: 0;
+                            font-size: 0.8em;
                         }
 
                         p.purposes {
@@ -220,53 +234,58 @@ $muted: #999;
         @media(max-width: 989px){
             border: none;
         }
-    
-        .cookie-notice-body {
-            color: #ffffff;
-            display: block;
-            margin-bottom: 1em;
-            
-    
-            .cookie-notice-changes {
-                text-decoration: none;
-                font-size: .8em;
+        
+        .cookie-notice-changes {
+                font-size: 0.8em;
+                line-height: 1.2em;
+                margin-bottom: 20px;
             }
     
+        .cookie-notice-body {
+            color: $text-color;
+            display: block;
+            margin-bottom: 1em;
+
             a.cookie-notice-learn-more {
                 display: inline-block;
             }
     
             a.cookie-notice-decline {
+                
             }
         }
         
         .cookie-notice-ok {
                 display: flex;
+        }
+            
+        .cookie-notice-btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: $btn-color;
+            padding: 0.5em 1em;
+
+    
+            &.cookie-notice-btn-primary {
+                background: $primary;
             }
             
-            .cookie-notice-btn {
-                flex: 1;
-                text-align: center;
-                text-decoration: none;
-                color: #000000;
-                padding: 0.5em 1em;
-    
-        
-                &.cookie-notice-btn-primary {
-                    background: $primary;
-                }
-                
-                &.cookie-notice-btn-primary:hover {
-                    background: $primary-hover;
-                    color: #000;
-                }
-    
-                &.cookie-notice-btn-secondary {
-                    background: $secondary;
-                }
-
-                
+            &.cookie-notice-btn-primary:hover {
+                background: $primary-hover;
+                color: $btn-color;
             }
+
+            &.cookie-notice-btn-secondary {
+                background: $secondary;
+            }
+            
+            &.cookie-notice-btn-secondary:hover {
+                background: $secondary-hover;
+            }
+
+            
+        }
     
     }
 }
